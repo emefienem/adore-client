@@ -1,0 +1,36 @@
+.filter-menu{
+    width: 100%;
+    min-height: 40px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.filter-menu select, input {
+    height: 40px;
+    border: 1px solid gold;
+    outline: none;
+    padding: 0 5px;
+}
+
+.filter-menu input {
+    flex: 1;
+    margin: 0 10px;
+}
+
+
+.load-more{
+    text-align: center;
+}
+
+.load-more button{
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    text-transform: uppercase;
+}
+
+/* styles.css */

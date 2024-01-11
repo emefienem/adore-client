@@ -4,21 +4,22 @@
 }
 
 .loader{
-    width: 300px;
-    height: 300px;
+    width: 120px;
+    height: 120px;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    height: 120px;
+    animation: spin 2s linear infinite;
     margin: auto;
 }
 
-.loader div{
-    width: calc(100% - 15px);
-    height: calc(100% - 15px);
-    border: 2px solid #fff;
-    border-top: 2px solid greenyellow;
-    border-radius: 50%;
-    animation: rotate 10s linear infinite alternate-reverse;
-}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
 
-@keyframes rotate {
-    50% { transform: rotate(80deg);}
-    100% { transform: rotate(360deg);}
+    100% {
+        transform: rotate(360deg);
+    }
 }

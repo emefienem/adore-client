@@ -1,0 +1,17 @@
+.this-div{
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.rows{
+    margin: 20px;
+    width: 100%;
+}
+
+.rows input{
+    border: 1px solid gray;
+    width: 90%;
+    margin: 20px;
+    outline: none;
+}

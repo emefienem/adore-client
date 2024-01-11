@@ -2,6 +2,7 @@ import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
 import ProductsAPI from "./api/ProductsAPI";
 import UserAPI from "./api/UserAPI";
+import CategoriesAPI from "./api/CategoriesAPI";
 
 export const GlobalState = createContext();
 
@@ -14,7 +15,6 @@ export const DataProvider = ({ children }) => {
         withCredentials: true,
       });
       setToken(res.data.accesstoken);
-      console.log(res.data);
     } catch (error) {
       console.log(error.message);
     }
@@ -31,6 +31,7 @@ export const DataProvider = ({ children }) => {
     token: [token, setToken],
     productsAPI: ProductsAPI(),
     userAPI: UserAPI(token),
+    categoriesAPI: CategoriesAPI(token),
   };
   return <GlobalState.Provider value={state}>{children}</GlobalState.Provider>;
 };

@@ -1,7 +1,23 @@
 .products{
-    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    justify-items: center;
-    margin: 20px 0;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 10px;
+    width: 100%;
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 799px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-left: 10vh;
+    }
 }

@@ -32,14 +32,18 @@
 
 .login-page form button{
     width: 150px;
-    background: #ECE6F3;
+    background: cadetblue;
     color: #000;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
+.login-page form button:active{
+    background: #ECE6F3;
+}
+
 .login-page form a{
     color: orange;
     letter-spacing: 1.33px;
-    text-transform: uppercase;
+    /* text-transform: upper; */
 }

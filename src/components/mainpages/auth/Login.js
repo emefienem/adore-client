@@ -4,6 +4,7 @@ import axios from "axios";
 import "./Login.css";
 
 const Login = () => {
+  const [message, setMessage] = useState("");
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -25,14 +26,16 @@ const Login = () => {
       localStorage.setItem("firstLogin", true);
       window.location.href = "/";
     } catch (error) {
-      // <div>{error.response.data.msg}</div>;
-      alert(error.response.data.msg);
+      setMessage(error.response.data.msg);
     }
   };
   return (
     <div className="login-page">
       <form onSubmit={loginSubmit}>
         <h2>Login</h2>
+        <p style={{ textAlign: "center", color: "#fff", background: "red" }}>
+          {message}
+        </p>
         <input
           type="email"
           name="email"
@@ -55,6 +58,12 @@ const Login = () => {
           <button type="submit">Login</button>
           <Link to="/register">Register</Link>
         </div>
+        <p>
+          Forgot Password?
+          <span>
+            <Link to="/forgot-password">Click here</Link>
+          </span>
+        </p>
       </form>
     </div>
   );
