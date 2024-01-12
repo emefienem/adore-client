@@ -53,6 +53,7 @@ const Products = () => {
     });
   };
 
+  if (loading) return <Loading />;
   return (
     <div className="body">
       <Filters />

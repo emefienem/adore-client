@@ -14,9 +14,8 @@ const ForgotPassword = () => {
         { email }
       );
       // alert("Link sent");
-      setMessage("Link sent");
+      setMessage(res.data.msg);
     } catch (error) {
-      // alert(error.msg);
       setMessage(error.msg);
     }
   };

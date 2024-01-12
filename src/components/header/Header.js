@@ -111,13 +111,6 @@ const Header = () => {
     left: menu ? 0 : "-100%",
   };
 
-  const styleLogo = {
-    width: "15%",
-    height: "60px",
-    borderRadius: "50%",
-    display: isAdmin ? "none" : "flex",
-  };
-
   return (
     <header>
       <div className="menu" onClick={() => setMenu(!menu)}>
@@ -125,7 +118,7 @@ const Header = () => {
       </div>
       <div className="logo">
         <Link to="/">
-          <img src="/images/amaka-logo.jpg" alt="logo" style={styleLogo} />
+          <img src="/images/amaka-logo.jpg" alt="logo" className="logo3" />
         </Link>
       </div>
 

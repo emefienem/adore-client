@@ -3,7 +3,15 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <div style={{ display: "flex", background: "whitesmoke" }}>
+    <div
+      style={{
+        display: "flex",
+        background: "whitesmoke",
+        margin: "auto",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <div className="product-container">
         <div className="product animate-left">
           <img src="/images/jewelry1.jpg" alt="Jewelry 1" />
@@ -21,7 +29,7 @@ const Home = () => {
           <img src="/images/jewelry11.jpg" alt="Jewelry 4" />
         </div>
       </div>
-
+      {/* 
       <div style={{ margin: "15px" }}>
         <div className="product animate-right">
           <img src="/images/jewelry4.jpg" alt="Jewelry 5" />
@@ -44,7 +52,7 @@ const Home = () => {
         <div className="product">
           <img src="/images/jewelry10.jpg" alt="Jewelry 11" />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
