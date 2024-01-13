@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { GlobalState } from "../../../GlobalState";
 import axios from "axios";
 import "./Categories.css";
+const api = process.env.REACT_APP_SERVER_URL;
 
 const Categories = () => {
   const [message, setMessage] = useState("");
@@ -18,14 +19,14 @@ const Categories = () => {
     try {
       if (onEdit) {
         const res = await axios.put(
-          `http://localhost:5000/api/category/${id}`,
+          `${api}/api/category/${id}`,
           { name: category },
           { headers: { Authorization: token } }
         );
         setMessage(res.data.msg);
       } else {
         const res = await axios.post(
-          "http://localhost:5000/api/category",
+          `${api}/api/category`,
           { name: category },
           { headers: { Authorization: token } }
         );
@@ -46,12 +47,9 @@ const Categories = () => {
 
   const deleteCategory = async (id) => {
     try {
-      const res = await axios.delete(
-        `http://localhost:5000/api/category/${id}`,
-        {
-          headers: { Authorization: token },
-        }
-      );
+      const res = await axios.delete(`${api}/api/category/${id}`, {
+        headers: { Authorization: token },
+      });
       setMessage(res.data.msg);
       setCallback(!callback);
     } catch (error) {

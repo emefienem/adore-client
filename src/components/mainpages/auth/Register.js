@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+const api = process.env.REACT_APP_SERVER_URL;
 
 const Register = () => {
   const [message, setMessage] = useState("");
@@ -18,11 +19,10 @@ const Register = () => {
   const registerSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/user/register", { ...user });
+      await axios.post(`${api}/user/register`, { ...user });
       localStorage.setItem("firstLogin", true);
       window.location.href = "/";
     } catch (error) {
-      // alert(error.response.data.msg);
       setMessage(error.response.data.msg);
     }
   };

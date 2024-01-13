@@ -3,6 +3,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import "./NewsLetter.css";
+const api = process.env.REACT_APP_SERVER_URL;
 
 const Newsletter = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -20,12 +21,9 @@ const Newsletter = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://localhost:5000/user/subscribe",
-        {
-          email,
-        }
-      );
+      const response = await axios.post(`${api}/user/subscribe`, {
+        email,
+      });
       setMessage(response.data);
 
       handleClose();

@@ -4,7 +4,6 @@ import axios from "axios";
 import { GlobalState } from "../../../GlobalState";
 import Loading from "../utils/Loading/Loading";
 import "./CreateProduct.css";
-
 const initialState = {
   product_id: "",
   title: "",
@@ -15,6 +14,7 @@ const initialState = {
   category: "",
   id: "",
 };
+const api = process.env.REACT_APP_SERVER_URL;
 
 const CreateProduct = () => {
   const [message, setMessage] = useState("");
@@ -71,11 +71,9 @@ const CreateProduct = () => {
       formData.append("file", file);
 
       setLoading(true);
-      const res = await axios.post(
-        "http://localhost:5000/api/upload",
-        formData,
-        { headers: { "content-type": "multipart/form", Authorization: token } }
-      );
+      const res = await axios.post(`${api}/api/upload`, formData, {
+        headers: { "content-type": "multipart/form", Authorization: token },
+      });
       setLoading(false);
       setImages(res.data);
     } catch (error) {
@@ -107,13 +105,13 @@ const CreateProduct = () => {
       if (!images) return setMessage("No image found");
       if (onEdit) {
         await axios.put(
-          `http://localhost:5000/api/products/${product._id}`,
+          `${api}/api/products/${product._id}`,
           { ...product, images },
           { headers: { Authorization: token } }
         );
       } else {
         await axios.post(
-          "http://localhost:5000/api/products",
+          `${api}/api/products`,
           { ...product, images },
           { headers: { Authorization: token } }
         );

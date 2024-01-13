@@ -3,6 +3,7 @@ import axios from "axios";
 import ProductsAPI from "./api/ProductsAPI";
 import UserAPI from "./api/UserAPI";
 import CategoriesAPI from "./api/CategoriesAPI";
+const api = process.env.REACT_APP_SERVER_URL;
 
 export const GlobalState = createContext();
 
@@ -11,7 +12,7 @@ export const DataProvider = ({ children }) => {
 
   const refreshToken = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/user/refresh-token", {
+      const res = await axios.get(`${api}/user/refresh-token`, {
         withCredentials: true,
       });
       setToken(res.data.accesstoken);

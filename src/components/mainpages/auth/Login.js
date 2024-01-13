@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
+const api = process.env.REACT_APP_SERVER_URL;
 
 const Login = () => {
   const [message, setMessage] = useState("");
@@ -19,7 +20,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await axios.post(
-        "http://localhost:5000/user/login",
+        `${api}/user/login`,
         { ...user },
         { withCredentials: true }
       );

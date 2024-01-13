@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+const api = process.env.REACT_APP_SERVER_URL;
 
 const UserAPI = (token) => {
   const [message, setMessage] = useState("");
@@ -26,7 +27,7 @@ const UserAPI = (token) => {
     if (token) {
       const getUser = async () => {
         try {
-          const res = await axios.get("http://localhost:5000/user/infor", {
+          const res = await axios.get(`${api}/user/infor`, {
             headers: { Authorization: token },
           });
           setUser(res.data);
@@ -51,7 +52,7 @@ const UserAPI = (token) => {
       setCart([...cart, { ...product, quantity: 1 }]);
 
       await axios.patch(
-        "http://localhost:5000/user/addcart",
+        `${api}/user/addcart`,
         {
           cart: [...cart, { ...product, quantity: 1 }],
         },

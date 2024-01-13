@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+const api = process.env.REACT_APP_SERVER_URL;
 
 const ForgotPassword = () => {
   const [message, setMessage] = useState("");
@@ -9,11 +10,7 @@ const ForgotPassword = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post(
-        "http://localhost:5000/user/forgot-password",
-        { email }
-      );
-      // alert("Link sent");
+      const res = await axios.post(`${api}/user/forgot-password`, { email });
       setMessage(res.data.msg);
     } catch (error) {
       setMessage(error.msg);

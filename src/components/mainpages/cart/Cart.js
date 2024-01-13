@@ -3,6 +3,7 @@ import { GlobalState } from "../../../GlobalState";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Cart.css";
+const api = process.env.REACT_APP_SERVER_URL;
 
 const Cart = () => {
   const state = useContext(GlobalState);
@@ -28,7 +29,7 @@ const Cart = () => {
 
   const addToCart = async () => {
     await axios.patch(
-      "http://localhost:5000/user/addcart",
+      `${api}/user/addcart`,
       { cart },
       { headers: { Authorization: token } }
     );

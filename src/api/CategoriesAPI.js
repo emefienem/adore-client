@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+const api = process.env.REACT_APP_SERVER_URL;
 
 const CategoriesAPI = (token) => {
   const [categories, setCategories] = useState([]);
   const [callback, setCallback] = useState(false);
   useEffect(() => {
     const getCategories = async () => {
-      const res = await axios.get("http://localhost:5000/api/category");
+      const res = await axios.get(`${api}/api/category`);
       setCategories(res.data);
     };
     getCategories();

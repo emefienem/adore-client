@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Subscribers.css";
 import Loading from "../utils/Loading/Loading";
+const api = process.env.REACT_APP_SERVER_URL;
 
 const Subscribers = () => {
   const [subject, setSubject] = useState("");
@@ -27,7 +28,7 @@ const Subscribers = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/user/subscribers", {
+      const res = await axios.post(`${api}/user/subscribers`, {
         text,
         subject,
       });

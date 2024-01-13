@@ -3,11 +3,6 @@ import { GlobalState } from "../../../../GlobalState";
 
 const LoadMore = () => {
   const state = useContext(GlobalState);
-  // const [products, setProducts] = state.productsAPI.products;
-  // const [category, setCategory] = state.productsAPI.category;
-  // const [categories] = state.categoriesAPI.categories;
-  // const [sort, setSort] = state.productsAPI.sort;
-  // const [search, setSearch] = state.productsAPI.search;
   const [page, setPage] = state.productsAPI.page;
   const [result] = state.productsAPI.result;
 
