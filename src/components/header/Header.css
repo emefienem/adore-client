@@ -133,4 +133,8 @@ header ul li:hover{
     header{
         width: 110%;
     }
+
+    .search-menu {
+        width: 100%;
+    }
 }
