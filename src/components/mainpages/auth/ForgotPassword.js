@@ -14,7 +14,7 @@ const ForgotPassword = () => {
         "https://adore-jewelries-api.onrender.com/user/forgot-password",
         { email }
       );
-      setMessage(res.data.msg);
+      setMessage("Link Sent");
     } catch (error) {
       setMessage(error.msg);
     }
@@ -23,7 +23,9 @@ const ForgotPassword = () => {
     <div className="login-page">
       <form onSubmit={handleForgotPassword}>
         <h2>Forgot Password</h2>
-        <span>{message}</span>
+        <p style={{ textAlign: "center", color: "#fff", background: "gray" }}>
+          {message}
+        </p>
         <input
           type="email"
           name="email"
