@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
-const api = process.env.REACT_APP_SERVER_URL;
+// const api = process.env.REACT_APP_SERVER_URL;
 
 const Login = () => {
   const [message, setMessage] = useState("");
@@ -20,7 +20,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await axios.post(
-        `${api}/user/login`,
+        "https://adore-jewelries-api.onrender.com/user/login",
         { ...user },
         { withCredentials: true }
       );

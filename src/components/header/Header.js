@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { GlobalState } from "../../GlobalState";
 import "./Header.css";
-const api = process.env.REACT_APP_SERVER_URL;
+// const api = process.env.REACT_APP_SERVER_URL;
 
 const Header = () => {
   const state = useContext(GlobalState);
@@ -53,7 +53,7 @@ const Header = () => {
   };
 
   const loggedOut = async () => {
-    await axios.get(`${api}/user/logout`);
+    await axios.get("https://adore-jewelries-api.onrender.com/user/logout");
     localStorage.clear();
     setIsAdmin(false);
     setIsLogged(false);

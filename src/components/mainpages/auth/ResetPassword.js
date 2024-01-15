@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-const api = process.env.REACT_APP_SERVER_URL;
+// const api = process.env.REACT_APP_SERVER_URL;
 
 const ResetPassword = () => {
   const resetToken = useParams();
@@ -10,7 +10,11 @@ const ResetPassword = () => {
   const handleResetPassword = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${api}/user/reset-password`, resetToken, newPassword);
+      await axios.post(
+        "https://adore-jewelries-api.onrender.com/user/reset-password",
+        resetToken,
+        newPassword
+      );
     } catch (error) {
       alert(error.response.data.msg);
     }

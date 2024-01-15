@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Subscribers.css";
 import Loading from "../utils/Loading/Loading";
-const api = process.env.REACT_APP_SERVER_URL;
+// const api = process.env.REACT_APP_SERVER_URL;
 
 const Subscribers = () => {
   const [subject, setSubject] = useState("");
@@ -28,10 +28,13 @@ const Subscribers = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post(`${api}/user/subscribers`, {
-        text,
-        subject,
-      });
+      const res = await axios.post(
+        "https://adore-jewelries-api.onrender.com/user/subscribers",
+        {
+          text,
+          subject,
+        }
+      );
 
       setMessage(res.data.msg);
     } catch (error) {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-const api = process.env.REACT_APP_SERVER_URL;
+// const api = process.env.REACT_APP_SERVER_URL;
 
 const Register = () => {
   const [message, setMessage] = useState("");
@@ -19,7 +19,10 @@ const Register = () => {
   const registerSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${api}/user/register`, { ...user });
+      await axios.post(
+        "https://adore-jewelries-api.onrender.com/user/register",
+        { ...user }
+      );
       localStorage.setItem("firstLogin", true);
       window.location.href = "/";
     } catch (error) {

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-const api = process.env.REACT_APP_SERVER_URL;
 
 const UserAPI = (token) => {
   const [message, setMessage] = useState("");
@@ -27,9 +26,12 @@ const UserAPI = (token) => {
     if (token) {
       const getUser = async () => {
         try {
-          const res = await axios.get(`${api}/user/infor`, {
-            headers: { Authorization: token },
-          });
+          const res = await axios.get(
+            "https://adore-jewelries-api.onrender.com/user/infor",
+            {
+              headers: { Authorization: token },
+            }
+          );
           setUser(res.data);
           setIsLogged(true);
           res.data.role === 1 ? setIsAdmin(true) : setIsAdmin(false);
@@ -52,7 +54,7 @@ const UserAPI = (token) => {
       setCart([...cart, { ...product, quantity: 1 }]);
 
       await axios.patch(
-        `${api}/user/addcart`,
+        "https://adore-jewelries-api.onrender.com/user/addcart",
         {
           cart: [...cart, { ...product, quantity: 1 }],
         },

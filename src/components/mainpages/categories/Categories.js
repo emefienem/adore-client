@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { GlobalState } from "../../../GlobalState";
 import axios from "axios";
 import "./Categories.css";
-const api = process.env.REACT_APP_SERVER_URL;
+// const api = process.env.REACT_APP_SERVER_URL;
 
 const Categories = () => {
   const [message, setMessage] = useState("");
@@ -19,14 +19,14 @@ const Categories = () => {
     try {
       if (onEdit) {
         const res = await axios.put(
-          `${api}/api/category/${id}`,
+          `https://adore-jewelries-api.onrender.com/api/category/${id}`,
           { name: category },
           { headers: { Authorization: token } }
         );
         setMessage(res.data.msg);
       } else {
         const res = await axios.post(
-          `${api}/api/category`,
+          "https://adore-jewelries-api.onrender.com/api/category",
           { name: category },
           { headers: { Authorization: token } }
         );
@@ -47,9 +47,12 @@ const Categories = () => {
 
   const deleteCategory = async (id) => {
     try {
-      const res = await axios.delete(`${api}/api/category/${id}`, {
-        headers: { Authorization: token },
-      });
+      const res = await axios.delete(
+        `https://adore-jewelries-api.onrender.com/api/category/${id}`,
+        {
+          headers: { Authorization: token },
+        }
+      );
       setMessage(res.data.msg);
       setCallback(!callback);
     } catch (error) {
