@@ -42,13 +42,13 @@
     white-space: nowrap;
     text-transform: capitalize;
     cursor: pointer;
-    color: teal;
+    color: gold;
     font-weight: 700;
     text-align: center;
 }
 
 .product-box span{
-    color: salmon;
+    color: #000;
     text-align: center;
     font-weight: 800;
 }
@@ -61,7 +61,7 @@
     height: 70px;
     overflow: hidden;
     font-weight: 500;
-    color: seagreen;
+    color: #333333
 }
 
 .row-btn{
@@ -84,12 +84,16 @@
 }
 
 #btn-buy{
-    background: rosybrown;
+    /* background: rosybrown; */
+    background: #000;
+    color: gold;
     margin-right: 5px;
 }
 
 #btn-view{
-    background: #CFAFAF;
+    /* background: #CFAFAF; */
+    background: #fff;
+    color: #000;
     margin-left: 5px;
 }
 
