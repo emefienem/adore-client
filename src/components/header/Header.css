@@ -53,6 +53,7 @@ header ul li:hover{
 
 .user-dropdown {
     position: relative;
+    list-style: none;
 }
 
 .user-icon {
@@ -97,8 +98,8 @@ header ul li:hover{
 }
 
 .logo3 {
-    width: 15%;
-    height: 60px;
+    width: 5%;
+    height: 40px;
     border-radius: 50%;
 }
 

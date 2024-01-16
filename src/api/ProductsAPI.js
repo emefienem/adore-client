@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-// const api = process.env.REACT_APP_SERVER_URL;
 
 const ProductsAPI = () => {
   const [products, setProducts] = useState([]);

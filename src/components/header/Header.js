@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -19,6 +19,7 @@ const Header = () => {
   const [menu, setMenu] = useState(false);
   const user = state.userAPI.user;
   const [showUserEmail, setShowUserEmail] = useState(false);
+  const navigate = useNavigate();
 
   const toggleUserEmail = () => {
     setShowUserEmail(!showUserEmail);
@@ -104,9 +105,21 @@ const Header = () => {
     left: menu ? 0 : "-100%",
   };
 
+  const toggleMenu = () => {
+    setMenu(!menu);
+  };
+
+  const handleMenuItemClick = (path) => {
+    // Close the menu
+    toggleMenu();
+
+    // Navigate to the desired link
+    navigate(path);
+  };
+
   return (
     <header>
-      <div className="menu" onClick={() => setMenu(!menu)}>
+      <div className="menu" onClick={toggleMenu}>
         <FontAwesomeIcon icon={faBars} />
       </div>
       <div className="logo">
@@ -116,27 +129,30 @@ const Header = () => {
       </div>
 
       <ul style={styleMenu}>
-        <li className="menu-item">
+        <li className="menu-item" onClick={() => handleMenuItemClick("/")}>
           <Link to="/">Home</Link>
         </li>
-        <li className="menu-item">
+        <li className="menu-item" onClick={() => handleMenuItemClick("/shop")}>
           <Link to="/shop">{isAdmin ? "Products" : "Shop"}</Link>
         </li>
-        <li className="menu-item">
+        <li
+          className="menu-item"
+          onClick={() => handleMenuItemClick("/contact")}
+        >
           <Link to="/contact">Contact</Link>
         </li>
         {isAdmin && adminRouter()}
-        {isLogged ? (
-          loggedRouter()
-        ) : (
-          <>
-            <GuestMenu />
-          </>
-        )}
-        <li onClick={() => setMenu(!menu)}>
+        <li onClick={toggleMenu}>
           <FontAwesomeIcon icon={faClose} className="menu" />
         </li>
       </ul>
+      {isLogged ? (
+        loggedRouter()
+      ) : (
+        <>
+          <GuestMenu />
+        </>
+      )}
       {isAdmin ? (
         ""
       ) : (

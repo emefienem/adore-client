@@ -21,17 +21,30 @@ const Filters = () => {
   };
 
   return (
-    <div className="filter-menu">
-      <div className="row">
-        <span>Filters: </span>
-        <select name="category" value={category} onChange={handleCategory}>
-          <option value="">All Products</option>
-          {categories.map((category) => (
-            <option value={"category=" + category._id} key={category._id}>
-              {category.name}
-            </option>
-          ))}
-        </select>
+    <>
+      <div className="filter-menu">
+        <div className="row">
+          <span>Filters: </span>
+          <select name="category" value={category} onChange={handleCategory}>
+            <option value="">All Products</option>
+            {categories.map((category) => (
+              <option value={"category=" + category._id} key={category._id}>
+                {category.name}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="row">
+          <span>Sort: </span>
+          <select value={sort} onChange={(e) => setSort(e.target.value)}>
+            <option value="">Newest</option>
+            <option value="sort=oldest">Oldest</option>
+            <option value="sort=-sold">Best Price</option>
+            <option value="sort=price">Highest Price</option>
+            <option value="sort=-price">Lowest Price</option>
+          </select>
+        </div>
       </div>
 
       <div className="search-menu">
@@ -44,6 +57,7 @@ const Filters = () => {
               padding: "5px",
               borderRadius: "50%",
               cursor: "pointer",
+              margin: "5px",
             }}
           />
         </div>
@@ -57,18 +71,7 @@ const Filters = () => {
           />
         )}
       </div>
-
-      <div className="row">
-        <span>Sort: </span>
-        <select value={sort} onChange={(e) => setSort(e.target.value)}>
-          <option value="">Newest</option>
-          <option value="sort=oldest">Oldest</option>
-          <option value="sort=-sold">Best Price</option>
-          <option value="sort=price">Highest Price</option>
-          <option value="sort=-price">Lowest Price</option>
-        </select>
-      </div>
-    </div>
+    </>
   );
 };
 
