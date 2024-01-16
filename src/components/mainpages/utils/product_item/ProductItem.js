@@ -47,13 +47,9 @@ const ProductItem = ({
       <img src={product.images.url} alt={product.title} />
       <div className="product-box">
         <h2>{product.title}</h2>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <span>${product.price}</span>
-          <span style={{ color: "green", fontSize: "12px" }}>
-            Naira: ₦{parseFloat(product.price.replace("$", "")) * exchangeRate}
-          </span>
+        <div className="dope">
+          <span>₦{product.price}</span>
         </div>
-        {/* <p>{product.description}</p> */}
       </div>
 
       <div className="row-btn">
