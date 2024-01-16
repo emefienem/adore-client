@@ -10,7 +10,7 @@ const ForgotPassword = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post(
+      await axios.post(
         "https://adore-jewelries-api.onrender.com/user/forgot-password",
         { email }
       );

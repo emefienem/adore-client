@@ -1,15 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { GlobalState } from "../../../../GlobalState";
 import "./Filter.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const Filters = () => {
   const state = useContext(GlobalState);
   const [category, setCategory] = state.productsAPI.category;
   const [categories] = state.categoriesAPI.categories;
   const [sort, setSort] = state.productsAPI.sort;
+  const [icon, setIcon] = useState(false);
+  const [search, setSearch] = state.productsAPI.search;
 
   const handleCategory = (e) => {
     setCategory(e.target.value);
+  };
+
+  const toggleIcon = () => {
+    setIcon(!icon);
   };
 
   return (
@@ -24,6 +32,30 @@ const Filters = () => {
             </option>
           ))}
         </select>
+      </div>
+
+      <div className="search-menu">
+        <div className="search-icon" onClick={toggleIcon}>
+          <FontAwesomeIcon
+            icon={faSearch}
+            style={{
+              border: "1px solid gray",
+              background: "whitesmoke",
+              padding: "5px",
+              borderRadius: "50%",
+              cursor: "pointer",
+            }}
+          />
+        </div>
+
+        {icon && (
+          <input
+            type="text"
+            value={search}
+            placeholder="Enter the name of product"
+            onChange={(e) => setSearch(e.target.value.toLowerCase())}
+          />
+        )}
       </div>
 
       <div className="row">

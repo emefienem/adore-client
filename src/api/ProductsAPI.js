@@ -10,7 +10,7 @@ const ProductsAPI = () => {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [result, setResult] = useState(0);
-
+  const [icon, setIcon] = useState(false);
   useEffect(() => {
     const getProducts = async () => {
       try {
@@ -36,6 +36,7 @@ const ProductsAPI = () => {
     search: [search, setSearch],
     page: [page, setPage],
     result: [result, setResult],
+    icon: [icon, setIcon],
   };
 };
 

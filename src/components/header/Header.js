@@ -7,11 +7,9 @@ import {
   faClose,
   faShoppingBag,
   faUser,
-  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import { GlobalState } from "../../GlobalState";
 import "./Header.css";
-// const api = process.env.REACT_APP_SERVER_URL;
 
 const Header = () => {
   const state = useContext(GlobalState);
@@ -21,8 +19,6 @@ const Header = () => {
   const [menu, setMenu] = useState(false);
   const user = state.userAPI.user;
   const [showUserEmail, setShowUserEmail] = useState(false);
-  const [search, setSearch] = state.productsAPI.search;
-  const [icon, setIcon] = useState(false);
 
   const toggleUserEmail = () => {
     setShowUserEmail(!showUserEmail);
@@ -30,10 +26,6 @@ const Header = () => {
 
   const closeUserEmail = () => {
     setShowUserEmail(false);
-  };
-
-  const toggleIcon = () => {
-    setIcon(!icon);
   };
 
   const adminRouter = () => {
@@ -121,30 +113,6 @@ const Header = () => {
         <Link to="/">
           <img src="/images/amaka-logo.jpg" alt="logo" className="logo3" />
         </Link>
-      </div>
-
-      <div className="search-menu">
-        <div className="search-icon" onClick={toggleIcon}>
-          <FontAwesomeIcon
-            icon={faSearch}
-            style={{
-              border: "1px solid gray",
-              background: "whitesmoke",
-              padding: "5px",
-              borderRadius: "50%",
-              cursor: "pointer",
-            }}
-          />
-        </div>
-
-        {icon && (
-          <input
-            type="text"
-            value={search}
-            placeholder="Enter the name of product"
-            onChange={(e) => setSearch(e.target.value.toLowerCase())}
-          />
-        )}
       </div>
 
       <ul style={styleMenu}>

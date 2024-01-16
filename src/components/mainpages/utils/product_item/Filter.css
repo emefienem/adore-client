@@ -33,4 +33,25 @@
     text-transform: uppercase;
 }
 
+.search-menu {
+    width: 50%;
+    min-height: 40px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.search-menu input {
+    height: 40px;
+    outline: none;
+    border: none;
+    padding: 0 5px;
+    flex: 1;
+    margin: 0 10px;
+    border-radius: 20%;
+}
+
 /* styles.css */
