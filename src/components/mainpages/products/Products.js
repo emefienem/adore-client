@@ -6,7 +6,6 @@ import "./Products.css";
 import Loading from "../utils/Loading/Loading";
 import Filters from "../utils/product_item/Filters";
 import LoadMore from "../utils/product_item/LoadMore";
-// const api = process.env.REACT_APP_SERVER_URL;
 
 const Products = () => {
   const state = useContext(GlobalState);

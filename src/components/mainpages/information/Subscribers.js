@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Subscribers.css";
 import Loading from "../utils/Loading/Loading";
-// const api = process.env.REACT_APP_SERVER_URL;
 
 const Subscribers = () => {
   const [subject, setSubject] = useState("");

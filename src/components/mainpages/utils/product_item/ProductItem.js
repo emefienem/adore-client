@@ -53,7 +53,7 @@ const ProductItem = ({
             Naira: ₦{parseFloat(product.price.replace("$", "")) * exchangeRate}
           </span>
         </div>
-        <p>{product.description}</p>
+        {/* <p>{product.description}</p> */}
       </div>
 
       <div className="row-btn">

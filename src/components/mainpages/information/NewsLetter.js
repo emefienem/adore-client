@@ -3,7 +3,6 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import "./NewsLetter.css";
-// const api = process.env.REACT_APP_SERVER_URL;
 
 const Newsletter = () => {
   const [isOpen, setIsOpen] = useState(true);

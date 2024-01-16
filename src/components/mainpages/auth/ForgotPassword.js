@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-// const api = process.env.REACT_APP_SERVER_URL;
 
 const ForgotPassword = () => {
   const [message, setMessage] = useState("");

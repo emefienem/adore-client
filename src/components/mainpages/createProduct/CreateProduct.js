@@ -14,7 +14,6 @@ const initialState = {
   category: "",
   id: "",
 };
-// const api = process.env.REACT_APP_SERVER_URL;
 
 const CreateProduct = () => {
   const [message, setMessage] = useState("");

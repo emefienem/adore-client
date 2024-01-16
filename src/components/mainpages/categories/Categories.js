@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import { GlobalState } from "../../../GlobalState";
 import axios from "axios";
 import "./Categories.css";
-// const api = process.env.REACT_APP_SERVER_URL;
 
 const Categories = () => {
   const [message, setMessage] = useState("");

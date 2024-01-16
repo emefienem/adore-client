@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-// const api = process.env.REACT_APP_SERVER_URL;
 
 const Register = () => {
   const [message, setMessage] = useState("");
