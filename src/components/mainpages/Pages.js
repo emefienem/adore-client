@@ -12,7 +12,6 @@ import CreateProduct from "./createProduct/CreateProduct";
 import ForgotPassword from "./auth/ForgotPassword";
 import ResetPassword from "./auth/ResetPassword";
 import Contact from "./information/Contact";
-import Home from "./home/Home";
 import Subscribers from "./information/Subscribers";
 
 const Pages = () => {
@@ -20,8 +19,7 @@ const Pages = () => {
   const [isLogged] = state.userAPI.isLogged;
   return (
     <Routes>
-      <Route path="/" exact element={<Home />} />
-      <Route path="/shop" exact element={<Products />} />
+      <Route path="/" exact element={<Products />} />
       <Route path="/contact" exact element={<Contact />} />
       <Route
         path="/login"

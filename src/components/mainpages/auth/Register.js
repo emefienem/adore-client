@@ -20,12 +20,13 @@ const Register = () => {
     try {
       await axios.post(
         "https://adore-jewelries-api.onrender.com/user/register",
-        { ...user }
+        { ...user },
+        { withCredentials: true }
       );
       localStorage.setItem("firstLogin", true);
       window.location.href = "/";
     } catch (error) {
-      setMessage(error.response.data.msg);
+      setMessage(error);
     }
   };
   return (

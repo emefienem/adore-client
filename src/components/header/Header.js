@@ -129,11 +129,8 @@ const Header = () => {
       </div>
 
       <ul style={styleMenu}>
-        <li className="menu-item" onClick={() => handleMenuItemClick("/")}>
-          <Link to="/">Home</Link>
-        </li>
         <li className="menu-item" onClick={() => handleMenuItemClick("/shop")}>
-          <Link to="/shop">{isAdmin ? "Products" : "Shop"}</Link>
+          <Link to="/">{isAdmin ? "Products" : "Shop"}</Link>
         </li>
         <li
           className="menu-item"
