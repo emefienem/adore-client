@@ -129,7 +129,7 @@ const Header = () => {
       </div>
 
       <ul style={styleMenu}>
-        <li className="menu-item" onClick={() => handleMenuItemClick("/shop")}>
+        <li className="menu-item" onClick={() => handleMenuItemClick("/")}>
           <Link to="/">{isAdmin ? "Products" : "Shop"}</Link>
         </li>
         <li
