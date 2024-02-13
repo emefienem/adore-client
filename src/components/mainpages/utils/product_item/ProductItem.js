@@ -16,7 +16,6 @@ const ProductItem = ({
   products,
   deleteProduct,
 }) => {
-  const exchangeRate = 1100;
   const state = useContext(GlobalState);
   const addCart = state.userAPI.addCart;
   const [loading, setLoading] = useState(false);
@@ -48,7 +47,7 @@ const ProductItem = ({
       <div className="product-box">
         <h2>{product.title}</h2>
         <div className="dope">
-          <span>₦{product.price}</span>
+          <span>${product.price}</span>
         </div>
       </div>
 
