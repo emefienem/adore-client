@@ -42,7 +42,7 @@ const DetailProduct = () => {
           <div>Description:</div>
           <p>{detailProduct.description}</p>
           <p>Sold: {detailProduct.sold}</p>
-          <Link to="/cart" className="cart">
+          <Link to="#" className="cart">
             Buy Now
           </Link>
         </div>

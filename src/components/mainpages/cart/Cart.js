@@ -113,7 +113,7 @@ const Cart = () => {
       ))}
       <div className="total">
         <h4>Total : ${total}</h4>
-        <Link to="#">Proceed to Payment</Link>
+        <Link to="/checkout">Checkout</Link>
       </div>
     </div>
   );

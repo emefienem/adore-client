@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { GlobalState } from "../../GlobalState";
 import "./Header.css";
+import { Dropdown, Menu, Space } from "antd";
 
 const Header = () => {
   const state = useContext(GlobalState);
@@ -110,10 +111,7 @@ const Header = () => {
   };
 
   const handleMenuItemClick = (path) => {
-    // Close the menu
     toggleMenu();
-
-    // Navigate to the desired link
     navigate(path);
   };
 
@@ -166,30 +164,26 @@ const Header = () => {
 
 export default Header;
 
-const GuestMenu = () => {
-  const [showAuthOptions, setShowAuthOptions] = useState(false);
+const menuItems = [
+  {
+    label: <Link to="/login">Login</Link>,
+    key: "0",
+  },
+  {
+    label: <Link to="/register">Register</Link>,
+    key: "1",
+  },
+  {
+    type: "divider",
+  },
+];
 
-  const handleUserIconClick = () => {
-    setShowAuthOptions(!showAuthOptions);
-  };
-
-  return (
-    <>
-      <li className="user-dropdown" onClick={handleUserIconClick}>
-        <div className="user-icon">
-          <FontAwesomeIcon icon={faUser} />
-        </div>
-        {showAuthOptions && (
-          <div className="user-dropdown-content">
-            <li className="menu-item">
-              <Link to="/login">Login</Link>
-            </li>
-            <li className="menu-item">
-              <Link to="/register">Register</Link>
-            </li>
-          </div>
-        )}
-      </li>
-    </>
-  );
-};
+const GuestMenu = () => (
+  <Dropdown overlay={<Menu items={menuItems} />} trigger={["click"]}>
+    <a onClick={(e) => e.preventDefault()}>
+      <Space>
+        <FontAwesomeIcon icon={faUser} />
+      </Space>
+    </a>
+  </Dropdown>
+);
