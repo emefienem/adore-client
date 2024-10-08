@@ -21,7 +21,7 @@ const Newsletter = () => {
 
     try {
       const response = await axios.post(
-        "https://adore-jewelries-api.onrender.com/user/subscribe",
+        "https://adore-server.onrender.com/user/subscribe",
         {
           email,
         }

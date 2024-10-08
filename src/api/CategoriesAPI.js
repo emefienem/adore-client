@@ -8,7 +8,7 @@ const CategoriesAPI = (token) => {
   useEffect(() => {
     const getCategories = async () => {
       const res = await axios.get(
-        "https://adore-jewelries-api.onrender.com/api/category"
+        "https://adore-server.onrender.com/api/category"
       );
       setCategories(res.data);
     };

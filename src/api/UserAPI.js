@@ -27,7 +27,7 @@ const UserAPI = (token) => {
       const getUser = async () => {
         try {
           const res = await axios.get(
-            "https://adore-jewelries-api.onrender.com/user/infor",
+            "https://adore-server.onrender.com/user/infor",
             {
               headers: { Authorization: token },
             }
@@ -54,7 +54,7 @@ const UserAPI = (token) => {
       setCart([...cart, { ...product, quantity: 1 }]);
 
       await axios.patch(
-        "https://adore-jewelries-api.onrender.com/user/addcart",
+        "https://adore-server.onrender.com/user/addcart",
         {
           cart: [...cart, { ...product, quantity: 1 }],
         },

@@ -21,13 +21,13 @@ const Products = () => {
     try {
       setLoading(true);
       const destroyImg = axios.post(
-        "https://adore-jewelries-api.onrender.com/api/destroy",
+        "https://adore-server.onrender.com/api/destroy",
         { public_id: public_id },
         { headers: { Authorization: token } }
       );
 
       const deleteProduct = axios.delete(
-        `https://adore-jewelries-api.onrender.com/api/products/${id}`,
+        `https://adore-server.onrender.com/api/products/${id}`,
         {
           headers: { Authorization: token },
         }

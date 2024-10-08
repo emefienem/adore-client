@@ -14,7 +14,7 @@ const ProductsAPI = () => {
     const getProducts = async () => {
       try {
         const res = await axios.get(
-          `https://adore-jewelries-api.onrender.com/api/products?limit=${
+          `https://adore-server.onrender.com/api/products?limit=${
             page * 9
           }&${category}&${sort}&title[regex]=${search}`
         );

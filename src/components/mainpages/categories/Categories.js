@@ -18,14 +18,14 @@ const Categories = () => {
     try {
       if (onEdit) {
         const res = await axios.put(
-          `https://adore-jewelries-api.onrender.com/api/category/${id}`,
+          `https://adore-server.onrender.com/api/category/${id}`,
           { name: category },
           { headers: { Authorization: token } }
         );
         setMessage(res.data.msg);
       } else {
         const res = await axios.post(
-          "https://adore-jewelries-api.onrender.com/api/category",
+          "https://adore-server.onrender.com/api/category",
           { name: category },
           { headers: { Authorization: token } }
         );
@@ -47,7 +47,7 @@ const Categories = () => {
   const deleteCategory = async (id) => {
     try {
       const res = await axios.delete(
-        `https://adore-jewelries-api.onrender.com/api/category/${id}`,
+        `https://adore-server.onrender.com/api/category/${id}`,
         {
           headers: { Authorization: token },
         }

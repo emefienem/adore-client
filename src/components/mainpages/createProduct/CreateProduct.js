@@ -71,7 +71,7 @@ const CreateProduct = () => {
 
       setLoading(true);
       const res = await axios.post(
-        "https://adore-jewelries-api.onrender.com/api/upload",
+        "https://adore-server.onrender.com/api/upload",
         formData,
         {
           headers: { "content-type": "multipart/form", Authorization: token },
@@ -89,7 +89,7 @@ const CreateProduct = () => {
       if (!isAdmin) return setMessage("You are not an admin");
       setLoading(true);
       await axios.post(
-        "https://adore-jewelries-api.onrender.com/api/destroy",
+        "https://adore-server.onrender.com/api/destroy",
         { public_id: images.public_id },
         { headers: { Authorization: token } }
       );
@@ -108,13 +108,13 @@ const CreateProduct = () => {
       if (!images) return setMessage("No image found");
       if (onEdit) {
         await axios.put(
-          `https://adore-jewelries-api.onrender.com/api/products/${product._id}`,
+          `https://adore-server.onrender.com/api/products/${product._id}`,
           { ...product, images },
           { headers: { Authorization: token } }
         );
       } else {
         await axios.post(
-          "https://adore-jewelries-api.onrender.com/api/products",
+          "https://adore-server.onrender.com/api/products",
           { ...product, images },
           { headers: { Authorization: token } }
         );

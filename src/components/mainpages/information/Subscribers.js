@@ -28,7 +28,7 @@ const Subscribers = () => {
     setLoading(true);
     try {
       const res = await axios.post(
-        "https://adore-jewelries-api.onrender.com/user/subscribers",
+        "https://adore-server.onrender.com/user/subscribers",
         {
           text,
           subject,

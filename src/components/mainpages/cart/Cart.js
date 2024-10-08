@@ -28,7 +28,7 @@ const Cart = () => {
 
   const addToCart = async () => {
     await axios.patch(
-      "https://adore-jewelries-api.onrender.com/user/addcart",
+      "https://adore-server.onrender.com/user/addcart",
       { cart },
       { headers: { Authorization: token } }
     );

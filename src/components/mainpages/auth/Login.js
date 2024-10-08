@@ -19,7 +19,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await axios.post(
-        "https://adore-jewelries-api.onrender.com/user/login",
+        "https://adore-server.onrender.com/user/login",
         { ...user },
         { withCredentials: true }
       );

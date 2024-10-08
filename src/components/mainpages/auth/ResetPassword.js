@@ -11,7 +11,7 @@ const ResetPassword = () => {
     e.preventDefault();
     try {
       await axios.post(
-        "https://adore-jewelries-api.onrender.com/user/reset-password",
+        "https://adore-server.onrender.com/user/reset-password",
         resetToken,
         newPassword
       );

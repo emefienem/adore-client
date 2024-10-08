@@ -12,7 +12,7 @@ export const DataProvider = ({ children }) => {
   const refreshToken = async () => {
     try {
       const res = await axios.get(
-        "https://adore-jewelries-api.onrender.com/user/refresh-token",
+        "https://adore-server.onrender.com/user/refresh-token",
         { withCredentials: true }
       );
       setToken(res.data.accesstoken);

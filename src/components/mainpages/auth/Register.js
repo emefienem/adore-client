@@ -19,7 +19,7 @@ const Register = () => {
     e.preventDefault();
     try {
       await axios.post(
-        "https://adore-jewelries-api.onrender.com/user/register",
+        "https://adore-server.onrender.com/user/register",
         { ...user },
         { withCredentials: true }
       );
